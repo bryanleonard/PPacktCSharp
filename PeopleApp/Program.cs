@@ -1,7 +1,6 @@
 ﻿using System;
 using static System.Console;
-using Packt.CS7;
-using PacktLibrary;
+using Packt.CS7; //PactLibrary
 using System.Collections.Generic;
 
 namespace PeopleApp
