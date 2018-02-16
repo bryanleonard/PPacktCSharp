@@ -1,6 +1,6 @@
 ﻿using System;
 using static System.Console;
-using Packt.CS7; //PactLibrary
+using Packt.CS7; //PacktLibrary
 using System.Collections.Generic;
 
 namespace PeopleApp
@@ -9,6 +9,62 @@ namespace PeopleApp
     {
         static void Main(string[] args)
         {
+            var dv1 = new DisplacementVector(3, 5);
+            var dv2 = new DisplacementVector(-2, 7);
+            var dv3 = dv1 + dv2;
+            WriteLine($"({dv1.X}, {dv1.Y}) + ({dv2.X}, {dv2.Y}) = ({dv3.X},{dv3.Y})");
+
+            WriteLine("*********************************");
+
+            string number1 = "4";
+            WriteLine($"{number1} squared is {Squarer.Square<string>(number1)}");
+
+            byte number2 = 3;
+            WriteLine($"{number2} squared is {Squarer.Square<byte>(number2)}");
+
+
+            WriteLine("*********************************");
+
+            var gt = new GenericThing<int>();
+            gt.Data = 42;
+            WriteLine($"GenericThing: {gt.Process("42")}");
+
+            //var t = new Thing();
+            //t.Data = 42;
+            //WriteLine($"\nThing: {t.Process("42")}"); // doesn't work, there's no type comparison safety
+
+            WriteLine("*********************************");
+
+            Person[] people =
+            {
+               new Person { Name = "Simon" },
+               new Person { Name = "Ben"},
+               new Person { Name = "Jenny" },
+               new Person { Name = "Adam" },
+               new Person { Name = "Richard" }
+            };
+
+            //WriteLine("Initial list of people");
+            //foreach (var p in people)
+            //{
+            //    WriteLine($"{p.Name}");
+            //}
+
+            WriteLine("\nUse Person's IComparable implementation to sort:");
+            Array.Sort(people);
+            foreach (var person in people)
+            {
+                Write($"{person.Name} ");
+            }
+
+            WriteLine("\nUse PersonComparer's IComparer implementation to sort:");
+            Array.Sort(people, new PersonComparer());
+            foreach (var person in people)
+            {
+                Write($"{person.Name} ");
+            }
+
+            WriteLine("\n*********************************");
 
             var harry = new Person { Name = "Harry" };
             var mary = new Person { Name = "Mary" };
@@ -20,11 +76,23 @@ namespace PeopleApp
             // call static method
             var baby2 = Person.Procreate(harry, jill);
 
+            // call an operator
+            var baby3 = harry * mary;
+
             WriteLine($"{mary.Name} has {mary.Children.Count} children.");
             WriteLine($"{harry.Name} has {harry.Children.Count} children.");
             WriteLine($"{jill.Name} has {jill.Children.Count} children.");
             WriteLine($"{mary.Name}'s first child is named \"{mary.Children[0].Name}\".");
 
+            WriteLine("*********************************");
+            WriteLine($"5! is {Person.Factorial(5)}");
+            WriteLine("*********************************");
+
+            harry.Shout += Harry_Shout;
+            harry.Poke();
+            harry.Poke();
+            harry.Poke();
+            harry.Poke();
 
             // Prior to Chapter 6
 
@@ -148,6 +216,13 @@ namespace PeopleApp
             ////WriteLine($"{ba2.AccountName} earned {ba2.Balance * BankAccount.InterestRate:C} interest.");
 
 
+        }
+
+        private static void Harry_Shout(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            Person p = (Person)sender;
+            WriteLine($"{p.Name} is this angry: {p.AngerLevel}");
         }
     }
 }
