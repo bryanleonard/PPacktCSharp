@@ -9,6 +9,61 @@ namespace PeopleApp
     {
         static void Main(string[] args)
         {
+
+            
+
+
+
+            WriteLine("*********************************");
+
+            Employee aliceInEmployee = new Employee { Name = "Alice Pooper", EmployeeCode = "AA123" };
+
+
+
+            Person aliceInPerson = aliceInEmployee;
+                aliceInEmployee.WriteToConsole();
+                aliceInPerson.WriteToConsole();
+
+            WriteLine(aliceInEmployee.ToString());
+            WriteLine(aliceInPerson.ToString());
+
+
+
+            //Employee e2 = (Employee)aliceInPerson;
+
+            if (aliceInPerson is Employee)
+            {
+                WriteLine($"{nameof(aliceInPerson)} IS an Employee\n");
+                Employee e2 = (Employee)aliceInPerson;
+                // do something with e2
+            }
+
+            Employee e3 = aliceInPerson as Employee;
+            if (e3 != null)
+            {
+                WriteLine($"{nameof(aliceInPerson)} AS an Employee\n");
+                // do something with e3 
+            }
+
+            WriteLine("*********************************");
+
+            Employee e1 = new Employee
+            {
+                Name = "John Jones",
+                DateOfBirth = new DateTime(1990, 7, 28)
+            };
+            e1.WriteToConsole();
+
+            e1.EmployeeCode = "JJ001";
+            e1.HireDate = new DateTime(2014, 11, 23);
+            WriteLine($"{e1.Name} was hired on {e1.HireDate:MM/dd/yy}");
+
+            WriteLine(e1.ToString());
+
+
+
+            WriteLine("*********************************");
+
             var dv1 = new DisplacementVector(3, 5);
             var dv2 = new DisplacementVector(-2, 7);
             var dv3 = dv1 + dv2;
@@ -22,7 +77,6 @@ namespace PeopleApp
             byte number2 = 3;
             WriteLine($"{number2} squared is {Squarer.Square<byte>(number2)}");
 
-
             WriteLine("*********************************");
 
             var gt = new GenericThing<int>();
@@ -35,64 +89,64 @@ namespace PeopleApp
 
             WriteLine("*********************************");
 
-            Person[] people =
-            {
-               new Person { Name = "Simon" },
-               new Person { Name = "Ben"},
-               new Person { Name = "Jenny" },
-               new Person { Name = "Adam" },
-               new Person { Name = "Richard" }
-            };
-
-            //WriteLine("Initial list of people");
-            //foreach (var p in people)
+            //Person[] people =
             //{
-            //    WriteLine($"{p.Name}");
+            //   new Person { Name = "Simon" },
+            //   new Person { Name = "Ben"},
+            //   new Person { Name = "Jenny" },
+            //   new Person { Name = "Adam" },
+            //   new Person { Name = "Richard" }
+            //};
+
+            ////WriteLine("Initial list of people");
+            ////foreach (var p in people)
+            ////{
+            ////    WriteLine($"{p.Name}");
+            ////}
+
+            //WriteLine("\nUse Person's IComparable implementation to sort:");
+            //Array.Sort(people);
+            //foreach (var person in people)
+            //{
+            //    Write($"{person.Name} ");
             //}
 
-            WriteLine("\nUse Person's IComparable implementation to sort:");
-            Array.Sort(people);
-            foreach (var person in people)
-            {
-                Write($"{person.Name} ");
-            }
+            //WriteLine("\nUse PersonComparer's IComparer implementation to sort:");
+            //Array.Sort(people, new PersonComparer());
+            //foreach (var person in people)
+            //{
+            //    Write($"{person.Name} ");
+            //}
 
-            WriteLine("\nUse PersonComparer's IComparer implementation to sort:");
-            Array.Sort(people, new PersonComparer());
-            foreach (var person in people)
-            {
-                Write($"{person.Name} ");
-            }
+            //WriteLine("\n*********************************");
 
-            WriteLine("\n*********************************");
+            //var harry = new Person { Name = "Harry" };
+            //var mary = new Person { Name = "Mary" };
+            //var jill = new Person { Name = "Jill" };
 
-            var harry = new Person { Name = "Harry" };
-            var mary = new Person { Name = "Mary" };
-            var jill = new Person { Name = "Jill" };
+            //// call instance method 
+            //var baby1 = mary.ProcreateWith(harry);
 
-            // call instance method 
-            var baby1 = mary.ProcreateWith(harry);
+            //// call static method
+            //var baby2 = Person.Procreate(harry, jill);
 
-            // call static method
-            var baby2 = Person.Procreate(harry, jill);
+            //// call an operator
+            //var baby3 = harry * mary;
 
-            // call an operator
-            var baby3 = harry * mary;
+            //WriteLine($"{mary.Name} has {mary.Children.Count} children.");
+            //WriteLine($"{harry.Name} has {harry.Children.Count} children.");
+            //WriteLine($"{jill.Name} has {jill.Children.Count} children.");
+            //WriteLine($"{mary.Name}'s first child is named \"{mary.Children[0].Name}\".");
 
-            WriteLine($"{mary.Name} has {mary.Children.Count} children.");
-            WriteLine($"{harry.Name} has {harry.Children.Count} children.");
-            WriteLine($"{jill.Name} has {jill.Children.Count} children.");
-            WriteLine($"{mary.Name}'s first child is named \"{mary.Children[0].Name}\".");
+            //WriteLine("*********************************");
+            //WriteLine($"5! is {Person.Factorial(5)}");
+            //WriteLine("*********************************");
 
-            WriteLine("*********************************");
-            WriteLine($"5! is {Person.Factorial(5)}");
-            WriteLine("*********************************");
-
-            harry.Shout += Harry_Shout;
-            harry.Poke();
-            harry.Poke();
-            harry.Poke();
-            harry.Poke();
+            //harry.Shout += Harry_Shout;
+            //harry.Poke();
+            //harry.Poke();
+            //harry.Poke();
+            //harry.Poke();
 
             // Prior to Chapter 6
 
