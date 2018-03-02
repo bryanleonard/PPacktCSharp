@@ -10,7 +10,21 @@ namespace PeopleApp
         static void Main(string[] args)
         {
 
-            
+
+
+
+            WriteLine("*********************************");
+
+            WriteLine("Email Test:");
+            string email1 = "pamela@test.com";
+            string email2 = "ian&test.com";
+
+            //old style
+            //WriteLine($"{email1} is a valid e-mail address: {StringExtensions.IsValidEmail(email1)}."); 
+            //WriteLine($"{email2} is a valid e-mail address: {StringExtensions.IsValidEmail(email2)}.");
+            WriteLine($"{email1} is a valid e-mail address:{email1.IsValidEmail()}.");
+            WriteLine($"{email2} is a valid e-mail address:{email2.IsValidEmail()}.");
+
 
 
 
@@ -19,7 +33,7 @@ namespace PeopleApp
             Employee aliceInEmployee = new Employee { Name = "Alice Pooper", EmployeeCode = "AA123" };
 
 
-`
+
             Person aliceInPerson = aliceInEmployee;
                 aliceInEmployee.WriteToConsole();
                 aliceInPerson.WriteToConsole();
@@ -60,7 +74,18 @@ namespace PeopleApp
 
             WriteLine(e1.ToString());
 
+            WriteLine("*********************************");
+            WriteLine("TIME TRAVEL");
 
+            try
+            {
+                e1.TimeTravel(new DateTime(1999, 12, 31));
+                e1.TimeTravel(new DateTime(1950, 12, 25));
+            }
+            catch (PersonException ex)
+            {
+                WriteLine(ex.Message);
+            }
 
             WriteLine("*********************************");
 
