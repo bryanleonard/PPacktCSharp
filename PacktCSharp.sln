@@ -33,13 +33,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLibrary", "SharedLibr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCoreEverywhere", "DotNetCoreEverywhere\DotNetCoreEverywhere.csproj", "{0EC66D12-502D-4735-8645-E77DA84FC532}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithNumbers", "WorkingWithNumbers\WorkingWithNumbers.csproj", "{1BFE4720-2D7B-4BFE-8BA0-E23BE7419555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithNumbers", "WorkingWithNumbers\WorkingWithNumbers.csproj", "{1BFE4720-2D7B-4BFE-8BA0-E23BE7419555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithText", "WorkingWithText\WorkingWithText.csproj", "{4A304140-813B-413F-ACDF-35B6FF8DF851}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithText", "WorkingWithText\WorkingWithText.csproj", "{4A304140-813B-413F-ACDF-35B6FF8DF851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithRegEx", "WorkingWithRegEx\WorkingWithRegEx.csproj", "{AABA1F18-BFFD-4EC0-A07D-DD56FA0766B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithRegEx", "WorkingWithRegEx\WorkingWithRegEx.csproj", "{AABA1F18-BFFD-4EC0-A07D-DD56FA0766B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithLists", "WorkingWithLists\WorkingWithLists.csproj", "{C789D93E-EE08-4975-8FF8-9C8CEED421F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithLists", "WorkingWithLists\WorkingWithLists.csproj", "{C789D93E-EE08-4975-8FF8-9C8CEED421F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithDictionaries", "WorkingWithDictionaries\WorkingWithDictionaries.csproj", "{47AA59A4-CAC5-4561-B922-1BFD85598D62}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithNetworkResources", "WorkingWithNetworkResources\WorkingWithNetworkResources.csproj", "{AF4EA96A-D018-4223-8A0E-D65E3196EE68}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithReflection", "WorkingWithReflection\WorkingWithReflection.csproj", "{FD82B81B-6A9E-4810-A454-BD51FA81FF05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Internationalization", "Internationalization\Internationalization.csproj", "{D207376A-A1C7-4511-8B8C-F6FFFDB12C08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +131,22 @@ Global
 		{C789D93E-EE08-4975-8FF8-9C8CEED421F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C789D93E-EE08-4975-8FF8-9C8CEED421F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C789D93E-EE08-4975-8FF8-9C8CEED421F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47AA59A4-CAC5-4561-B922-1BFD85598D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47AA59A4-CAC5-4561-B922-1BFD85598D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47AA59A4-CAC5-4561-B922-1BFD85598D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47AA59A4-CAC5-4561-B922-1BFD85598D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF4EA96A-D018-4223-8A0E-D65E3196EE68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4EA96A-D018-4223-8A0E-D65E3196EE68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4EA96A-D018-4223-8A0E-D65E3196EE68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4EA96A-D018-4223-8A0E-D65E3196EE68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD82B81B-6A9E-4810-A454-BD51FA81FF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD82B81B-6A9E-4810-A454-BD51FA81FF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD82B81B-6A9E-4810-A454-BD51FA81FF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD82B81B-6A9E-4810-A454-BD51FA81FF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D207376A-A1C7-4511-8B8C-F6FFFDB12C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D207376A-A1C7-4511-8B8C-F6FFFDB12C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D207376A-A1C7-4511-8B8C-F6FFFDB12C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D207376A-A1C7-4511-8B8C-F6FFFDB12C08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
