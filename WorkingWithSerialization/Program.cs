@@ -6,12 +6,13 @@ using Packt.CS7;                  // Person
 using static System.Console;
 using static System.Environment;
 using static System.IO.Path;
+using Newtonsoft.Json;
 
 namespace WorkingWithSerialization
 {
     class Program
     {
-        //https://www.packtpub.com/mapt/book/application_development/9781788398077/11/ch11lvl1sec78/serializing-object-graphs
+        
         static void Main(string[] args)
         {
             // create an object graph 
@@ -25,6 +26,10 @@ namespace WorkingWithSerialization
                         new Person(0M) {
                             FirstName = "Sally", LastName = "Rose",
                             DateOfBirth = new DateTime(1990, 7, 12)
+                        },
+                        new Person(0M) {
+                            FirstName = "Blanche", LastName = "Rose",
+                            DateOfBirth = new DateTime(1992, 12, 02)
                         }
                     }
                 }
@@ -44,13 +49,47 @@ namespace WorkingWithSerialization
             // you must close the stream to release the file lock 
             stream.Close();
 
-            WriteLine($"Written {new FileInfo(path).Length} bytes of XML to 
-   { path}
-            "); 
-   WriteLine();
+            WriteLine($"Written {new FileInfo(path).Length} bytes of XML to {path}"); 
+             WriteLine();
 
             // Display the serialized object graph 
-            WriteLine(File.ReadAllText(path));
+            WriteLine($"{File.ReadAllText(path)} \n");
+
+
+
+           FileStream xmlLoad = File.Open(path, FileMode.Open);
+            //deserialize and cast the object graph into a List of Person
+            var loadedPeople = (List<Person>)xs.Deserialize(xmlLoad);
+
+            foreach( var item in loadedPeople)
+            {
+                WriteLine($"{item.LastName} has {item.Children.Count} children.");
+            }
+            xmlLoad.Close();
+
+
+
+
+            // JSON
+
+            //create a file to write to
+            string jsonPath = Combine(CurrentDirectory, "people.json");
+
+            StreamWriter jsonStream = File.CreateText(jsonPath);
+
+            // create an object that will format as JSON
+            var jss = new JsonSerializer();
+
+            //serialize the object graph into a string
+            jss.Serialize(jsonStream, people);
+            jsonStream.Close(); // release the file lock
+
+            WriteLine();
+            WriteLine($"Written {new FileInfo(jsonPath).Length} bytes of JSON to: { jsonPath}");
+
+            // display the goods
+            WriteLine(File.ReadAllText(jsonPath));
+
         }
     }
 }

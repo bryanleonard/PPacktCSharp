@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="Packt.Crypto">
-      <HintPath>..\..\PacktCryptoLibrary\Packt.Crypto\Packt.Crypto\bin\Debug\netcoreapp2.0\Packt.Crypto.dll</HintPath>
+    <Reference Include="PacktLibrary">
+      <HintPath>..\..\PacktLibrary\bin\Debug\netstandard2.0\PacktLibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
 

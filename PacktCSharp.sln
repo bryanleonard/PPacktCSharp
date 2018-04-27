@@ -49,13 +49,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithReflection", "Wo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Internationalization", "Internationalization\Internationalization.csproj", "{D207376A-A1C7-4511-8B8C-F6FFFDB12C08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithFileSystems", "WorkingWithFileSystems\WorkingWithFileSystems.csproj", "{E4B8B05F-F69E-47B3-987C-AE65D830C8A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithFileSystems", "WorkingWithFileSystems\WorkingWithFileSystems.csproj", "{E4B8B05F-F69E-47B3-987C-AE65D830C8A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithStreams", "WorkingWithStreams\WorkingWithStreams.csproj", "{A229F7E5-B7F0-4190-B6BE-784F0F852882}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithStreams", "WorkingWithStreams\WorkingWithStreams.csproj", "{A229F7E5-B7F0-4190-B6BE-784F0F852882}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEncodings", "WorkingWithEncodings\WorkingWithEncodings.csproj", "{F8DF71A5-84D8-4E8A-B6FD-97844A7E59C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithEncodings", "WorkingWithEncodings\WorkingWithEncodings.csproj", "{F8DF71A5-84D8-4E8A-B6FD-97844A7E59C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{C4319677-0839-478C-9F92-BAF351AE612F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WorkingWithSerialization", "WorkingWithSerialization\WorkingWithSerialization.csproj", "{C4319677-0839-478C-9F92-BAF351AE612F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncryptionApp", "EncryptionApp\EncryptionApp.csproj", "{D781D274-4BE7-49EA-B61B-F7050353D3A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashingApp", "HashingApp\HashingApp.csproj", "{144A6F1E-89AC-4796-A431-AD6C851C6464}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkingWithEFCore", "WorkingWithEFCore\WorkingWithEFCore.csproj", "{ED4B8DA3-8F5C-4330-B0C1-8F8C28CB5184}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -171,6 +177,18 @@ Global
 		{C4319677-0839-478C-9F92-BAF351AE612F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4319677-0839-478C-9F92-BAF351AE612F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4319677-0839-478C-9F92-BAF351AE612F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D781D274-4BE7-49EA-B61B-F7050353D3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D781D274-4BE7-49EA-B61B-F7050353D3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D781D274-4BE7-49EA-B61B-F7050353D3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D781D274-4BE7-49EA-B61B-F7050353D3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{144A6F1E-89AC-4796-A431-AD6C851C6464}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{144A6F1E-89AC-4796-A431-AD6C851C6464}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{144A6F1E-89AC-4796-A431-AD6C851C6464}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{144A6F1E-89AC-4796-A431-AD6C851C6464}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4B8DA3-8F5C-4330-B0C1-8F8C28CB5184}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4B8DA3-8F5C-4330-B0C1-8F8C28CB5184}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4B8DA3-8F5C-4330-B0C1-8F8C28CB5184}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4B8DA3-8F5C-4330-B0C1-8F8C28CB5184}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
