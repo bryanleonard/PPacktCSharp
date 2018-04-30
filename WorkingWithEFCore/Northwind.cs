@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using static System.Console;
 
 namespace Packt.CS7
 {
@@ -28,7 +30,11 @@ namespace Packt.CS7
               .Property(category => category.CategoryName)
               .IsRequired()
               .HasMaxLength(40);
+
+            // global filter to remove discontinued items
+            modelBuilder.Entity<Product>().HasQueryFilter(p => !p.Discontinued);
         }
-        //https://www.packtpub.com/mapt/book/application_development/9781788398077/13/ch13lvl1sec92/querying-an-ef-core-model
+        
+        
     }
 }

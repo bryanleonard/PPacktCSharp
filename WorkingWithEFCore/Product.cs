@@ -8,7 +8,7 @@ namespace Packt.CS7
 {
     public class Product
     {
-        public int ProdutID { get; set; }
+        public int ProductID { get; set; }
         
         [Required]
         [StringLength(40)]
